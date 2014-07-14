@@ -1,5 +1,5 @@
 $(function(){
 	
-	console.log("first step");
+	$(".dialog").classicDialog();
 
 });
