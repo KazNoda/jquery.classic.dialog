@@ -38,6 +38,13 @@
             init : function(elem) {
                 this.dialog = $(elem);
                 this._createOverlay();
+                this._initialEvent();
+            },
+            _initialEvent : function() {
+                var self = this;
+                $(window).on("resize", function() {
+                    self._resize();
+                });
             },
             _createOverlay : function() {
                 $("<div/>")
@@ -48,8 +55,6 @@
                 $(".dialogOverlay").remove();
             },
             _resize: function() {
-                //var ww = $(window).innerWidth();
-                //var wh = $(window).innerHeight();
 
                 var ww = window.innerWidth;
                 var wh = window.innerHeight;
