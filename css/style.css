@@ -1,17 +1,28 @@
 body {
   background-color: #bbb; }
 
-.sampleDialog {
+#myDialog {
   width: 500px;
-  height: 350px; }
-  .sampleDialog p {
-    font-size: 13px; }
+  padding: 16px;
+  border-radius: 5px;
+  border: solid 1px #ccc; }
+  #myDialog #dialogContent {
+    overflow: auto;
+    height: 350px; }
+    #myDialog #dialogContent p {
+      font-size: 15px; }
 
 .dialog {
   display: none;
   position: absolute;
   background-color: #fff;
   z-index: 2; }
+  .dialog .dialogClose {
+    padding: 4px 6px;
+    border-radius: 3px;
+    background-color: #fff;
+    border: solid 1px #ccc;
+    box-shadow: 1px 1px 1px #eee; }
 
 .dialogOverlay {
   position: fixed;

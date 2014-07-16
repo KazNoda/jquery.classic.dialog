@@ -1,5 +1,5 @@
 $(function(){
 	
-	$(".dialog").classicDialog();
+	$("#myDialog").classicDialog();
 
 });
