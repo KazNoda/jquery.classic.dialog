@@ -8,11 +8,8 @@
             var defaults = {
                 autoOpen:       true,
                 closeOnEscape:  true,
-                dialogClass:    "",
                 height:         "auto",
                 width:          300,
-                maxHeight:      null,
-                maxWidth:       null,
                 minHeight:      150,
                 minWidth:       150,
                 modal:          false,
@@ -47,7 +44,7 @@
                     self._resize();
                 });
 
-                $(document).on("click", ".dialogClose", function(){
+                $(document).on("click", ".dialogClose, .dialogOverlay", function(){
                     self.hide();
                 });
             },
@@ -76,8 +73,13 @@
                 console.log("top : ", top);
                 console.log("left : ", left);
 
-                this.dialog.css("top", top);
-                this.dialog.css("left", left);
+                //this.dialog.css("top", top);
+                //this.dialog.css("left", left);
+
+                this.dialog.offset({
+                    "top" : top,
+                    "left" : left
+                });
             },
             show : function() {
                 console.log("show!");
@@ -93,9 +95,10 @@
             },
         };
 
-        /* 一致した要素上で繰り返す */
         return this.each(function(){
+
             var dialog = new CoreDialogClass(this);
+            return dialog;
         });
     };
 })(jQuery);
