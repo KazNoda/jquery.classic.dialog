@@ -76,9 +76,15 @@
                 //this.dialog.css("top", top);
                 //this.dialog.css("left", left);
 
-                this.dialog.offset({
-                    "top" : top,
-                    "left" : left
+                // this.dialog.offset({
+                //     "top" : top,
+                //     "left" : left
+                // });
+
+                this.dialog.position({
+                    my: "center",
+                    at: "center",
+                    of: window
                 });
             },
             show : function() {
